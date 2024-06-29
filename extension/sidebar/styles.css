@@ -1,0 +1,9 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  min-width: 250px;
+  min-height: 250px;
+}

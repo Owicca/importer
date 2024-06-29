@@ -1,0 +1,24 @@
+---
+- hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: Build docker
+      community.docker.docker_image_build:
+        name: importer
+        path: .
+      tags:
+        - docker
+
+    - name: Build native
+      shell:
+        cmd: go build -o ../build/importer main.go
+        chdir: ./src/
+      tags:
+        - native
+
+    - name: Build firefox extension
+      archive:
+        format: zip
+        path: ./extension/
+        dest: ./build/importer.zip

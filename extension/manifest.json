@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "importer",
+  "version": "0.1",
+  "description": "importer",
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "dinudev@yahoo.com"
+    }
+  },
+
+  "icons": {
+    "48": "favicon.ico"
+  },
+
+  "content_security_policy": {
+    "extension_pages": "default-src 'self'; connect-src https://importer.local;"
+  },
+  "host_permissions": [
+    "*://importer.local/*"
+  ],
+  "incognito": "spanning",
+  "permissions": [
+    "webRequest",
+    "tabs"
+  ],
+
+  "sidebar_action": {
+    "default_title": "Importer",
+    "default_panel": "sidebar/index.html"
+  }
+}
